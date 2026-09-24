@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "visual-explainer-mcp": {
+      "title": "Visual Explainer",
+      "description": "Generate image assets and provide the visual-explainer templates and references.",
+      "cwd": ".",
+      "command": "node",
+      "args": [
+        "./mcp/server.cjs"
+      ],
+      "env": {
+        "NANOBANANA_GEMINI_API_KEY": "${NANOBANANA_GEMINI_API_KEY}"
+      }
+    }
+  }
+}

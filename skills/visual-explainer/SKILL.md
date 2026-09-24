@@ -2,7 +2,6 @@
 name: visual-explainer-extension
 description: Generate strikingly well-designed, visually pleasing HTML diagrams and reports. Use when the user asks for a diagram, architecture overview, diff review, plan review, project recap, comparison table, or any visual explanation of technical concepts. Also use proactively when you are about to render a complex ASCII table (4+ rows or 3+ columns) — present it as a styled HTML page instead.
 license: MIT
-compatibility: Requires a browser to view generated HTML files. Native MCP image generation included.
 metadata:
   author: nicobailon
   version: "1.0.0"

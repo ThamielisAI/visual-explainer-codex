@@ -20,6 +20,7 @@ node_modules/
 dist/
 *.tsbuildinfo
 src/embedded-assets.ts
+mcp/server.mjs
 
 # Logs
 *.log

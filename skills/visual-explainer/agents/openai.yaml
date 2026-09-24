@@ -1,0 +1,6 @@
+interface:
+  display_name: "Visual Explainer"
+  short_description: "Create polished HTML explanations for technical context"
+  default_prompt: "Create a self-contained HTML visual explanation of this code, plan, diff, or data."
+policy:
+  allow_implicit_invocation: true

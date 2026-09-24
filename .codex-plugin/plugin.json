@@ -1,0 +1,47 @@
+{
+  "name": "visual-explainer-codex",
+  "version": "1.1.0",
+  "description": "Generate polished, self-contained HTML explanations for code, architecture, plans, diffs, slides, and data.",
+  "author": {
+    "name": "ThamielisAI",
+    "url": "https://github.com/ThamielisAI"
+  },
+  "homepage": "https://github.com/ThamielisAI/visual-explainer-codex#readme",
+  "repository": "https://github.com/ThamielisAI/visual-explainer-codex",
+  "license": "MIT",
+  "keywords": [
+    "visualization",
+    "html",
+    "diagrams",
+    "code-review",
+    "architecture",
+    "mcp",
+    "gemini"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Visual Explainer",
+    "shortDescription": "Turn technical context into polished HTML visual explanations",
+    "longDescription": "Visual Explainer creates self-contained HTML diagrams, reports, diff reviews, plan reviews, project recaps, slide decks, and data tables. Its Codex skill provides a design system and reusable templates; the bundled MCP server adds Gemini image generation tools for banners, icons, and patterns.",
+    "developerName": "ThamielisAI",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/ThamielisAI/visual-explainer-codex",
+    "privacyPolicyURL": "https://github.com/ThamielisAI/visual-explainer-codex/blob/main/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/ThamielisAI/visual-explainer-codex/blob/main/TERMS.md",
+    "brandColor": "#0F172A",
+    "composerIcon": "./banner.png",
+    "logo": "./banner.png",
+    "defaultPrompt": [
+      "Create a polished visual explanation of this architecture",
+      "Turn this diff into a self-contained HTML review",
+      "Build a high-fidelity slide deck from this topic"
+    ],
+    "screenshots": []
+  }
+}

@@ -2,6 +2,16 @@
 
 All notable changes to the `visual-explainer-extension` will be documented in this file.
 
+## [1.1.0] - 2026-09-24
+
+### Codex Plugin Packaging
+
+- Added a validated `.codex-plugin/plugin.json` manifest and repository marketplace entry.
+- Added Codex Markdown slash commands alongside the existing Gemini TOML commands.
+- Added a self-contained bundled MCP server for image-generation tools, resources, and prompts.
+- Restored the three MCP prompt registrations so prompt discovery and integration tests pass.
+- Added privacy and terms pages for plugin metadata and installation review.
+
 ## [1.0.0] - 2026-03-04
 
 ### 🚀 The Next-Level Aesthetic Overhaul

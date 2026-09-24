@@ -14,7 +14,6 @@ const DIAGRAM_TYPES = [
 ] as const;
 
 export function registerPrompts(server: McpServer): void {
-  /*
   server.registerPrompt(
     "create-diagram",
     {
@@ -115,5 +114,4 @@ export function registerPrompts(server: McpServer): void {
       ],
     })
   );
-  */
 }

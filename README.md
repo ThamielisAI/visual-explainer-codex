@@ -1,10 +1,12 @@
-# visual-explainer-extension
+# Visual Explainer
 
 ![visual-explainer-extension banner](banner.png)
 
-**Strikingly well-designed HTML diagrams and reports for the Gemini CLI.**
+**Strikingly well-designed HTML diagrams and reports for Codex, ChatGPT-compatible plugin hosts, and the Gemini CLI.**
 
 ABOUTME: `visual-explainer-extension` is a high-fidelity fork of the original `visual-explainer` project. It transforms complex terminal output into sophisticated, human-crafted HTML pages featuring advanced CSS orchestration, premium typography, and native AI image generation.
+
+This repository is packaged as the `visual-explainer-codex` Codex plugin. The plugin exposes the `visual-explainer-extension` skill, Markdown slash commands, and a bundled MCP server for image generation and template resources. The existing Gemini extension manifest and TOML commands remain available for Gemini CLI users.
 
 ## Project Overview
 
@@ -31,6 +33,40 @@ This extension replaces generic ASCII art and "AI-slop" templates with interacti
 - **Node.js / MCP**: Native image generation tools using the Gemini API.
 
 ## Installation
+
+### Codex plugin
+
+The repository includes a Codex plugin manifest at `.codex-plugin/plugin.json` and a repository-local marketplace at `.agents/plugins/marketplace.json`.
+
+For a remote GitHub installation:
+
+```bash
+codex plugin marketplace add ThamielisAI/visual-explainer-codex
+codex plugin add visual-explainer-codex@visual-explainer-codex
+```
+
+For a local checkout, build the bundled MCP server before adding the marketplace:
+
+```bash
+npm ci
+npm run build
+codex plugin marketplace add /absolute/path/to/visual-explainer-codex
+codex plugin add visual-explainer-codex@visual-explainer-codex
+```
+
+The MCP server uses `NANOBANANA_GEMINI_API_KEY` for Gemini image generation. Without that variable, the skill and template resources remain available, while image-generation tools return an actionable configuration error. Start a new Codex task after installation so the new skill and MCP tools are loaded.
+
+The bundled server uses local stdio transport, so this repository is directly installable for Codex and other local plugin hosts. A public ChatGPT directory submission would additionally require a hosted HTTPS MCP endpoint and the platform's review process.
+
+Available Codex commands use the plugin namespace:
+
+```text
+/visual-explainer-codex:diff-review
+/visual-explainer-codex:generate-web-diagram
+/visual-explainer-codex:visual-code-explain path/to/file.ts
+```
+
+### Gemini CLI
 
 ```bash
 # Link the extension to your Gemini CLI
@@ -67,7 +103,8 @@ The core logic and design principles are located in `skills/visual-explainer/SKI
 
 ## Development
 
-- **Testing**: Use `gemini extensions link .` to test locally.
+- **Build**: `npm run build` generates the TypeScript output and the self-contained `mcp/server.cjs` bundle used by the Codex plugin.
+- **Testing**: `npm test` runs the MCP unit and integration tests. Use `gemini extensions link .` to test the Gemini integration locally.
 - **Portability**: Keep HTML self-contained. All styles and logic are inlined for single-file portability.
 - **Performance**: Minimizes turns by reading reference materials in parallel.
 
